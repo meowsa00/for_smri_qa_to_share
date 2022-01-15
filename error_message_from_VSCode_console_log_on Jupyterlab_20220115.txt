@@ -1,0 +1,216 @@
+
+VSCodeからリモートコンテナに接続し、
+まず、VS Code上でテストコード書いてVSCodeのシェルで実行したところ
+正常に実行結果は返ってきました。
+次に、VSCodeから、Jupyterファイルをクリック、
+VSCode上でJupyterlabのようなセル画面が立ち上がり、そこで実行してみました。
+が、以下のエラーメッセージが出て実行結果が出てきません。
+Failed to start the Kernel. 
+
+qemu: uncaught target signal 6 (Aborted) - core dumped. 
+
+View Jupyter log for further details.
+===
+jupyterのエラーログ
+
+Jupyter Extension Version: 2021.11.1001550889.
+Python Extension Verison: 2021.12.1559732655.
+Info 16:29:17: Experimentation service retrieved: [object Object]
+User belongs to experiment group 'jupyterTestcf'
+User belongs to experiment group 'jupyterEnhancedDataViewer'
+Info 16:29:17: ZMQ install verified.
+Info 16:29:19: Experiment status for python is {"enabled":true,"optInto":[],"optOutFrom":[]}
+Info 16:29:20: Freferred kernel connection found in cache .jvsc74a57bd061a57a4b5406d2de388e2f91097d4e4bcd7d5f4a46f53a795aa28a02eed27fc5./root/anaconda3/python./root/anaconda3/python.-m#ipykernel_launcher
+Info 16:29:20: PreferredConnection: .jvsc74a57bd061a57a4b5406d2de388e2f91097d4e4bcd7d5f4a46f53a795aa28a02eed27fc5./root/anaconda3/python./root/anaconda3/python.-m#ipykernel_launcher found for NotebookDocument: /workspace/Untitled.ipynb
+Info 16:29:20: Early registration of controller for Kernel connection .jvsc74a57bd061a57a4b5406d2de388e2f91097d4e4bcd7d5f4a46f53a795aa28a02eed27fc5./root/anaconda3/python./root/anaconda3/python.-m#ipykernel_launcher
+Info 16:29:20: TargetController found ID: .jvsc74a57bd061a57a4b5406d2de388e2f91097d4e4bcd7d5f4a46f53a795aa28a02eed27fc5./root/anaconda3/python./root/anaconda3/python.-m#ipykernel_launcher for document /workspace/Untitled.ipynb
+Info 16:29:20: Setting controller affinity for /workspace/Untitled.ipynb .jvsc74a57bd061a57a4b5406d2de388e2f91097d4e4bcd7d5f4a46f53a795aa28a02eed27fc5./root/anaconda3/python./root/anaconda3/python.-m#ipykernel_launcher
+Info 16:29:20: Setting setActiveController for /workspace/Untitled.ipynb
+Info 16:29:20: KernelProvider switched kernel to id = .jvsc74a57bd061a57a4b5406d2de388e2f91097d4e4bcd7d5f4a46f53a795aa28a02eed27fc5./root/anaconda3/python./root/anaconda3/python.-m#ipykernel_launcher
+Info 16:29:20: Starting Notebook in kernel.ts id = .jvsc74a57bd061a57a4b5406d2de388e2f91097d4e4bcd7d5f4a46f53a795aa28a02eed27fc5./root/anaconda3/python./root/anaconda3/python.-m#ipykernel_launcher
+Info 16:29:20: Creating raw notebook for /workspace/Untitled.ipynb
+Info 16:29:20: Getting preferred kernel for /workspace/Untitled.ipynb
+Info 16:29:20: Computing working directory /workspace/Untitled.ipynb
+Info 16:29:20: Starting raw kernel base (Python 3.9.7)
+Info 16:29:20: installMissingDependencies ~/anaconda3/bin/python
+Info 16:29:20: IPykernel found previously in this enviornment ~/anaconda3/bin/python
+Info 16:29:20: Kernel launching with ports 9000,9001,9002,9003,9004. Start port is 9000
+Info 16:29:20: Launching kernel daemon for Python 3.9.7 64-bit ('base': conda) # ~/anaconda3/bin/python
+Info 16:29:23: Creating controller for jupyter-notebook with interpreter /bin/python3
+Info 16:29:23: Process Execution: > /bin/python3 -m pip list
+> /bin/python3 -m pip list
+Info 16:29:23: Creating daemon process for ~/anaconda3/bin/python with env variables count 40
+Info 16:29:24: Process Execution: > ~/anaconda3/bin/python -m vscode_datascience_helpers.daemon --daemon-module=vscode_datascience_helpers.kernel_launcher_daemon -v
+> ~/anaconda3/bin/python -m vscode_datascience_helpers.daemon --daemon-module=vscode_datascience_helpers.kernel_launcher_daemon -v
+Info 16:29:24: Process Execution: > ~/anaconda3/bin/python -m pip list
+> ~/anaconda3/bin/python -m pip list
+Info 16:29:24: Process Execution: > /bin/python3 -c "import pip"
+> /bin/python3 -c "import pip"
+Info 16:29:25: Starting kernel from scratch
+Info 16:29:30: Registering dummy command feature
+Warn 16:29:33: StdErr from Kernel Process /root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.
+
+Warn 16:29:33: StdErr from Kernel Process   warn(
+
+Warn 16:29:33: StdErr from Kernel Process /root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.
+
+Warn 16:29:33: StdErr from Kernel Process   warn(
+
+Warn 16:29:33: StdErr from Kernel Process Operation not permitted (src/thread.cpp:309)
+
+Warn 16:29:33: StdErr from Kernel Process Operation not permitted (src/thread.cpp:309)
+
+Warn 16:29:33: StdErr from Kernel Process qemu: uncaught target signal 6 (Aborted) - core dumped
+
+Error 16:29:33: Kernel died [o [Error]: The kernel died. View Jupyter [log](command:jupyter.viewOutput) for further details. 
+Error: qemu: uncaught target signal 6 (Aborted) - core dumped....
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:1023351
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:695951
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:696169
+	at Immediate._onImmediate (/root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:697734)
+	at processImmediate (internal/timers.js:461:21)] {
+  category: 'kerneldied',
+  errorMessage: 'qemu: uncaught target signal 6 (Aborted) - core dumped. \n',
+  stdErr: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n',
+  exitCode: -6,
+  reason: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n'
+} /root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.
+  warn(
+/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.
+  warn(
+Operation not permitted (src/thread.cpp:309)
+Operation not permitted (src/thread.cpp:309)
+qemu: uncaught target signal 6 (Aborted) - core dumped
+
+Error 16:29:33: KernelProcess Exit Exit - -6, /root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.
+  warn(
+/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.
+  warn(
+Operation not permitted (src/thread.cpp:309)
+Operation not permitted (src/thread.cpp:309)
+qemu: uncaught target signal 6 (Aborted) - core dumped
+ [o [Error]: The kernel died. View Jupyter [log](command:jupyter.viewOutput) for further details. 
+Error: qemu: uncaught target signal 6 (Aborted) - core dumped....
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:1023351
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:695951
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:696169
+	at Immediate._onImmediate (/root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:697734)
+	at processImmediate (internal/timers.js:461:21)] {
+  category: 'kerneldied',
+  errorMessage: 'qemu: uncaught target signal 6 (Aborted) - core dumped. \n',
+  stdErr: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n',
+  exitCode: -6,
+  reason: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n'
+}
+Error 16:29:33: Disposing kernel process due to an error [o [Error]: The kernel died. View Jupyter [log](command:jupyter.viewOutput) for further details. 
+Error: qemu: uncaught target signal 6 (Aborted) - core dumped....
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:1023351
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:695951
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:696169
+	at Immediate._onImmediate (/root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:697734)
+	at processImmediate (internal/timers.js:461:21)] {
+  category: 'kerneldied',
+  errorMessage: 'qemu: uncaught target signal 6 (Aborted) - core dumped. \n',
+  stdErr: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n',
+  exitCode: -6,
+  reason: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n'
+}
+Error 16:29:33: /root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.
+  warn(
+/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.
+  warn(
+Operation not permitted (src/thread.cpp:309)
+Operation not permitted (src/thread.cpp:309)
+qemu: uncaught target signal 6 (Aborted) - core dumped
+
+Info 16:29:33: Dispose Kernel process
+Info 16:29:33: kill daemon
+Error 16:29:33: Failed to connect raw kernel session: Error: The kernel died. View Jupyter [log](command:jupyter.viewOutput) for further details. 
+Error: qemu: uncaught target signal 6 (Aborted) - core dumped....
+Error 16:29:33: failed to create INotebook in kernel, UI Disabled = true [o [Error]: The kernel died. View Jupyter [log](command:jupyter.viewOutput) for further details. 
+Error: qemu: uncaught target signal 6 (Aborted) - core dumped....
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:1023351
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:695951
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:696169
+	at Immediate._onImmediate (/root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:697734)
+	at processImmediate (internal/timers.js:461:21)] {
+  category: 'kerneldied',
+  errorMessage: 'qemu: uncaught target signal 6 (Aborted) - core dumped. \n',
+  stdErr: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n',
+  exitCode: -6,
+  reason: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n'
+}
+Error 16:29:33: failed to start INotebook in kernel, UI Disabled = true [o [Error]: The kernel died. View Jupyter [log](command:jupyter.viewOutput) for further details. 
+Error: qemu: uncaught target signal 6 (Aborted) - core dumped....
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:1023351
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:695951
+	at /root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:696169
+	at Immediate._onImmediate (/root/.vscode-server/extensions/ms-toolsai.jupyter-2021.11.1001550889/out/client/extension.js:66:697734)
+	at processImmediate (internal/timers.js:461:21)] {
+  category: 'kerneldied',
+  errorMessage: 'qemu: uncaught target signal 6 (Aborted) - core dumped. \n',
+  stdErr: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n',
+  exitCode: -6,
+  reason: `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use 'hmac-sha256' instead of '"hmac-sha256"' if you require traitlets >=5.\n` +
+    '  warn(\n' +
+    `/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2157: FutureWarning: Supporting extra quotes around Bytes is deprecated in traitlets 5.0. Use '82b1c38c-9295-4379-99c0-a5c96f4d4931' instead of 'b"82b1c38c-9295-4379-99c0-a5c96f4d4931"'.\n` +
+    '  warn(\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'Operation not permitted (src/thread.cpp:309)\n' +
+    'qemu: uncaught target signal 6 (Aborted) - core dumped\n'
+}
+Info 16:29:37: Registering dummy command feature
