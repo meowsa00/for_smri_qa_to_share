@@ -1,0 +1,39 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+新機能と改善のために最新の PowerShell をインストールしてください!https://aka.ms/PSWindows
+
+PS C:\Users\2S9M7PA#ABJ> docker images
+REPOSITORY                 TAG       IMAGE ID       CREATED       SIZE
+docker-python_jupyterlab   latest    41770494bc87   2 weeks ago   4.51GB
+<none>                     <none>    e62bc3e4258d   2 weeks ago   4.45GB
+docker/getting-started     latest    26d80cd96d69   7 weeks ago   28.5MB
+PS C:\Users\2S9M7PA#ABJ> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\2S9M7PA#ABJ> docker ps -a
+CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS                        PORTS     NAMES
+8c21fd7b8b2f   docker-python_jupyterlab:latest   "jupyter-lab --ip=0.…"   13 minutes ago   Exited (255) 46 seconds ago             docker-python
+PS C:\Users\2S9M7PA#ABJ> docker rm -f docker-python
+docker-python
+PS C:\Users\2S9M7PA#ABJ> docker run -it -name docker-python docker-python_jupyterlab:latest
+unknown shorthand flag: 'n' in -name
+See 'docker run --help'.
+PS C:\Users\2S9M7PA#ABJ> docker run -it --name docker-python docker-python_jupyterlab:latest
+[W 2022-01-23 05:54:11.311 LabApp] 'token' has moved from LabApp to ServerApp. Be sure to update your config before our next release.
+/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use '' instead of "''" if you require traitlets >=5.
+  warn(
+[I 2022-01-23 05:54:11.318 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-01-23 05:54:11.328 ServerApp] Writing notebook server cookie secret to /root/.local/share/jupyter/runtime/jupyter_cookie_secret
+[I 2022-01-23 05:54:11.564 ServerApp] nbclassic | extension was successfully linked.
+/root/anaconda3/lib/python3.9/site-packages/traitlets/traitlets.py:2202: FutureWarning: Supporting extra quotes around strings is deprecated in traitlets 5.0. You can use '' instead of "''" if you require traitlets >=5.
+  warn(
+[W 2022-01-23 05:54:11.586 ServerApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 2022-01-23 05:54:11.592 LabApp] JupyterLab extension loaded from /root/anaconda3/lib/python3.9/site-packages/jupyterlab
+[I 2022-01-23 05:54:11.592 LabApp] JupyterLab application directory is /root/anaconda3/share/jupyter/lab
+[I 2022-01-23 05:54:11.596 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-01-23 05:54:11.601 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-01-23 05:54:11.601 ServerApp] Serving notebooks from local directory: /
+[I 2022-01-23 05:54:11.601 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2022-01-23 05:54:11.601 ServerApp] http://7633f5c221e7:8888/lab
+[I 2022-01-23 05:54:11.601 ServerApp]  or http://127.0.0.1:8888/lab
+[I 2022-01-23 05:54:11.601 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
