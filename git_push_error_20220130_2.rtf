@@ -1,0 +1,154 @@
+{\rtf1\ansi\ansicpg932\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red56\green185\blue199;\red86\green32\blue244;
+\red20\green153\blue2;\red202\green51\blue35;\red170\green171\blue37;\red57\green192\blue38;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c25546\c77007\c82023;\cssrgb\c41681\c25958\c96648;
+\cssrgb\c0\c65000\c0;\cssrgb\c83899\c28663\c18026;\cssrgb\c72331\c71682\c18599;\cssrgb\c25706\c77963\c19557;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 Last login: Mon Jan 31 04:04:25 on console\
+aa503847@aa503847noAir ~ % docker start docker-python\
+docker-python\
+aa503847@aa503847noAir ~ % docker exec -it docker-python /bin/bash\
+root@094ccf6213af:/# ls\
+
+\f1\b \cf3 bin
+\f0\b0 \cf2    
+\f1\b \cf4 dev
+\f0\b0 \cf2   
+\f1\b \cf4 home
+\f0\b0 \cf2   
+\f1\b \cf3 lib32
+\f0\b0 \cf2   
+\f1\b \cf3 libx32
+\f0\b0 \cf2   
+\f1\b \cf4 mnt
+\f0\b0 \cf2   
+\f1\b \cf4 proc
+\f0\b0 \cf2   
+\f1\b \cf4 run
+\f0\b0 \cf2    
+\f1\b \cf4 srv
+\f0\b0 \cf2   \cb5 tmp\cb1   
+\f1\b \cf4 var
+\f0\b0 \cf2 \
+
+\f1\b \cf4 boot
+\f0\b0 \cf2   
+\f1\b \cf4 etc
+\f0\b0 \cf2   
+\f1\b \cf3 lib
+\f0\b0 \cf2    
+\f1\b \cf3 lib64
+\f0\b0 \cf2   
+\f1\b \cf4 media
+\f0\b0 \cf2    
+\f1\b \cf4 opt
+\f0\b0 \cf2   
+\f1\b \cf4 root
+\f0\b0 \cf2   
+\f1\b \cf3 sbin
+\f0\b0 \cf2   
+\f1\b \cf4 sys
+\f0\b0 \cf2   
+\f1\b \cf4 usr
+\f0\b0 \cf2   
+\f1\b \cf4 workspace
+\f0\b0 \cf2 \
+root@094ccf6213af:/# cd workspace\
+root@094ccf6213af:/workspace# git init\
+Reinitialized existing Git repository in /workspace/.git/\
+root@094ccf6213af:/workspace# git add .\
+root@094ccf6213af:/workspace# git commit -m "first commit"\
+On branch main\
+nothing to commit, working tree clean\
+root@094ccf6213af:/workspace# git push origin main\
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"fill","stdin":"protocol=https\\nhost=github.com\\n"\}\
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"fill","stdin":"protocol=https\\nhost=github.com\\n"\}\
+Username for 'https://github.com': meowsa00\
+Password for 'https://meowsa00@github.com': \
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"approve","stdin":"protocol=https\\nhost=github.com\\nusername=meowsa00\\npassword=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\\n"\}\
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"approve","stdin":"protocol=https\\nhost=github.com\\nusername=meowsa00\\npassword=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\\n"\}\
+To https://github.com/meowsa00/workspace_m.git\
+ \cf6 ! [rejected]       \cf2  main -> main (fetch first)\
+\cf6 error: failed to push some refs to 'https://github.com/meowsa00/workspace_m.git'\cf2 \
+\cf7 hint: Updates were rejected because the remote contains work that you do\cf2 \
+\cf7 hint: not have locally. This is usually caused by another repository pushing\cf2 \
+\cf7 hint: to the same ref. You may want to first integrate the remote changes\cf2 \
+\cf7 hint: (e.g., 'git pull ...') before pushing again.\cf2 \
+\cf7 hint: See the 'Note about fast-forwards' in 'git push --help' for details.\cf2 \
+root@094ccf6213af:/workspace# git branch\
+* \cf8 main\cf2 \
+root@094ccf6213af:/workspace# git init\
+Reinitialized existing Git repository in /workspace/.git/\
+root@094ccf6213af:/workspace# git add .\
+root@094ccf6213af:/workspace# git commit -M main\
+error: unknown switch `M'\
+usage: git commit [<options>] [--] <pathspec>...\
+\
+    -q, --quiet           suppress summary after successful commit\
+    -v, --verbose         show diff in commit message template\
+\
+Commit message options\
+    -F, --file <file>     read message from file\
+    --author <author>     override author for commit\
+    --date <date>         override date for commit\
+    -m, --message <message>\
+                          commit message\
+    -c, --reedit-message <commit>\
+                          reuse and edit message from specified commit\
+    -C, --reuse-message <commit>\
+                          reuse message from specified commit\
+    --fixup <commit>      use autosquash formatted message to fixup specified commit\
+    --squash <commit>     use autosquash formatted message to squash specified commit\
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)\
+    -s, --signoff         add Signed-off-by:\
+    -t, --template <file>\
+                          use specified template file\
+    -e, --edit            force edit of commit\
+    --cleanup <mode>      how to strip spaces and #comments from message\
+    --status              include status in commit message template\
+    -S, --gpg-sign[=<key-id>]\
+                          GPG sign commit\
+\
+Commit contents options\
+    -a, --all             commit all changed files\
+    -i, --include         add specified files to index for commit\
+    --interactive         interactively add files\
+    -p, --patch           interactively add changes\
+    -o, --only            commit only specified files\
+    -n, --no-verify       bypass pre-commit and commit-msg hooks\
+    --dry-run             show what would be committed\
+    --short               show status concisely\
+    --branch              show branch information\
+    --ahead-behind        compute full ahead/behind values\
+    --porcelain           machine-readable output\
+    --long                show status in long format (default)\
+    -z, --null            terminate entries with NUL\
+    --amend               amend previous commit\
+    --no-post-rewrite     bypass post-rewrite hook\
+    -u, --untracked-files[=<mode>]\
+                          show untracked files, optional modes: all, normal, no. (Default: all)\
+    --pathspec-from-file <file>\
+                          read pathspec from file\
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character\
+\
+root@094ccf6213af:/workspace# git remote add origin https://github.com/meowsa00/workspace_m.git\
+fatal: remote origin already exists.\
+root@094ccf6213af:/workspace# git push origin main\
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"fill","stdin":"protocol=https\\nhost=github.com\\n"\}\
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"fill","stdin":"protocol=https\\nhost=github.com\\n"\}\
+Username for 'https://github.com': meowsa00\
+Password for 'https://meowsa00@github.com': \
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"approve","stdin":"protocol=https\\nhost=github.com\\nusername=meowsa00\\npassword=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\\n"\}\
+Remote-Containers CLI: RPC pipe not configured. Message: \{"command":"approve","stdin":"protocol=https\\nhost=github.com\\nusername=meowsa00\\npassword=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\\n"\}\
+To https://github.com/meowsa00/workspace_m.git\
+ \cf6 ! [rejected]       \cf2  main -> main (fetch first)\
+\cf6 error: failed to push some refs to 'https://github.com/meowsa00/workspace_m.git'\cf2 \
+\cf7 hint: Updates were rejected because the remote contains work that you do\cf2 \
+\cf7 hint: not have locally. This is usually caused by another repository pushing\cf2 \
+\cf7 hint: to the same ref. You may want to first integrate the remote changes\cf2 \
+\cf7 hint: (e.g., 'git pull ...') before pushing again.\cf2 \
+\cf7 hint: See the 'Note about fast-forwards' in 'git push --help' for details.\cf2 \
+root@094ccf6213af:/workspace# }
