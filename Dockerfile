@@ -1,6 +1,9 @@
-FROM --platform=linux/x86_64 ubuntu:latest
+FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y sudo wget vim curl gawk make gcc git
+ENV TZ=Asia/Tokyo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update && apt-get install -y sudo wget vim curl gawk make gcc git portaudio19-dev
 
 RUN wget https://repo.continuum.io/archive/Anaconda3-2021.11-Linux-x86_64.sh && \
     bash Anaconda3-2021.11-Linux-x86_64.sh -b  && \
@@ -14,6 +17,13 @@ RUN pip install --upgrade pip
 RUN pip install pandas_datareader
 RUN pip install mplfinance
 RUN pip install japanize-matplotlib
+RUN pip install selenium
+RUN pip install webdriver_manager
+RUN pip install tweepy
+RUN pip install spotipy
+RUN pip install --upgrade google-cloud-speech
+RUN pip install pydub
+RUN pip install --global-option='build_ext' --global-option='-I/usr/local/include' --global-option='-L/usr/local/lib' pyaudio
 
 RUN wget --quiet http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz -O ta-lib-0.4.0-src.tar.gz && \
     tar xvf ta-lib-0.4.0-src.tar.gz && \
