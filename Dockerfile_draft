@@ -1,7 +1,7 @@
+WORKDIR /tmp
 FROM ubuntu:latest
 
 ENV TZ=Asia/Tokyo
-WORKDIR /tmp
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && apt-get install -y sudo wget vim curl gawk make gcc git portaudio19-dev
@@ -41,8 +41,8 @@ RUN wget https://dl.google.com/linux/linux_signing_key.pub
 RUN sudo apt-key add linux_signing_key.pub
 RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 RUN sudo apt-get update
-RUN sudo apt -f install -y
-RUN sudo apt-get install google-chrome-stable
+RUN apt -f install -y
+RUN apt-get install google-chrome-stable
 
 RUN mkdir /workspace
 
