@@ -4,12 +4,12 @@ WORKDIR /tmp
 ENV TZ=Asia/Tokyo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get install -y sudo wget vim curl gawk make gcc git portaudio19-dev
+RUN apt-get update && apt-get install -y sudo wget vim curl gawk make gcc git portaudio19-dev google-chrome-stable
 
-RUN wget https://repo.continuum.io/archive/Anaconda3-2021.11-Linux-x86_64.sh && \
-    bash Anaconda3-2021.11-Linux-x86_64.sh -b  && \
-    rm -f Anaconda3-2021.11-Linux-x86_64.sh && \
-    sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -  && \
+RUN wget https://repo.continuum.io/archive/Anaconda3-2022.05-Linux-x86_64.sh && \
+    bash Anaconda3-2022.05-Linux-x86_64.sh -b  && \
+    rm -f Anaconda3-2022.05-Linux-x86_64.sh && \
+    sudo curl -sL https://deb.nodesource.com/setup_lts.x | sudo bash -  && \
     sudo apt-get install -y nodejs
 
 ENV PATH $PATH:/root/anaconda3/bin
@@ -35,14 +35,6 @@ RUN wget --quiet http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.
     cd .. && \
     pip install TA-Lib && \
     rm -R ta-lib ta-lib-0.4.0-src.tar.gz
-
-
-RUN wget https://dl.google.com/linux/linux_signing_key.pub
-RUN apt-key add linux_signing_key.pub
-RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-RUN apt-get update
-RUN apt -f install -y
-RUN apt-get install google-chrome-stable
 
 RUN mkdir /workspace
 
