@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+WORKDIR /tmp
 
 ENV TZ=Asia/Tokyo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -34,6 +35,14 @@ RUN wget --quiet http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.
     cd .. && \
     pip install TA-Lib && \
     rm -R ta-lib ta-lib-0.4.0-src.tar.gz
+
+
+RUN wget https://dl.google.com/linux/linux_signing_key.pub
+RUN apt-key add linux_signing_key.pub
+RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+RUN apt-get update
+RUN apt -f install -y
+RUN apt-get install google-chrome-stable
 
 RUN mkdir /workspace
 
