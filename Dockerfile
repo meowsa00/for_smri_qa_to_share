@@ -4,7 +4,7 @@ WORKDIR /tmp
 ENV TZ=Asia/Tokyo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get install -y sudo wget vim curl gawk make gcc git portaudio19-dev google-chrome-stable
+RUN apt-get update && apt-get install -y sudo wget vim curl gawk make gcc git portaudio19-dev unzip
 
 RUN wget https://repo.continuum.io/archive/Anaconda3-2022.05-Linux-x86_64.sh && \
     bash Anaconda3-2022.05-Linux-x86_64.sh -b  && \
@@ -25,6 +25,7 @@ RUN pip install spotipy
 RUN pip install --upgrade google-cloud-speech
 RUN pip install pydub
 RUN pip install --global-option='build_ext' --global-option='-I/usr/local/include' --global-option='-L/usr/local/lib' pyaudio
+RUN pip install Scrapy
 
 RUN wget --quiet http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz -O ta-lib-0.4.0-src.tar.gz && \
     tar xvf ta-lib-0.4.0-src.tar.gz && \
@@ -36,6 +37,18 @@ RUN wget --quiet http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.
     pip install TA-Lib && \
     rm -R ta-lib ta-lib-0.4.0-src.tar.gz
 
+# RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add && \
+#     wget http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_103.0.5060.134-1_amd64.deb && \
+#     apt-get install -y -f ./google-chrome-stable_103.0.5060.134-1_amd64.deb
+    
+
+# ADD https://chromedriver.storage.googleapis.com/103.0.5060.134/chromedriver_linux64.zip /opt/chrome/
+# RUN cd /opt/chrome/ && \
+#     unzip chromedriver_linux64.zip
+
+# ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/chrome
+
 RUN mkdir /workspace
 
-CMD ["jupyter-lab", "--ip=0.0.0.0","--port=8888" ,"--no-browser", "--allow-root", "--LabApp.token=''"]
+CMD ["jupyter-lab", "--notebook-dir=/workspace","--ip=0.0.0.0","--port=8888" ,"--no-browser", "--allow-root", "--LabApp.token=''"]
+WORKDIR /
