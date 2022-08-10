@@ -37,16 +37,17 @@ RUN wget --quiet http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.
     pip install TA-Lib && \
     rm -R ta-lib ta-lib-0.4.0-src.tar.gz
 
-# RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add && \
-#     wget http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_103.0.5060.134-1_amd64.deb && \
-#     apt-get install -y -f ./google-chrome-stable_103.0.5060.134-1_amd64.deb
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add && \
+    wget http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_103.0.5060.134-1_amd64.deb && \
+    apt-get install -y -f ./google-chrome-stable_103.0.5060.134-1_amd64.deb
     
 
-# ADD https://chromedriver.storage.googleapis.com/103.0.5060.134/chromedriver_linux64.zip /opt/chrome/
-# RUN cd /opt/chrome/ && \
-#     unzip chromedriver_linux64.zip
+ADD https://chromedriver.storage.googleapis.com/103.0.5060.134/chromedriver_linux64.zip /opt/chrome/
+RUN cd /opt/chrome/ && \
+    unzip chromedriver_linux64.zip
 
-# ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/chrome
+#ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/chrome
+ENV PATH $PATH:/opt/chrome
 
 RUN mkdir /workspace
 
